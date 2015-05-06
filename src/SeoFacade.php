@@ -1,8 +1,8 @@
-<?php namespace Origami\Seo\Facades;
+<?php namespace Origami\Seo;
 
 use Illuminate\Support\Facades\Facade;
 
-class Seo extends Facade
+class SeoFacade extends Facade
 {
     /**
      * Get the registered component.
