@@ -19,6 +19,11 @@
     "extra": {
         "branch-alias": {
             "dev-master": "1.1-dev"
+        },
+        "laravel": {
+            "providers": [
+                "Origami\\Seo\\SeoServiceProvider"
+            ]
         }
     },
     "minimum-stability": "dev"
