@@ -1,4 +1,6 @@
-<?php namespace Origami\Seo;
+<?php
+
+namespace Origami\Seo;
 
 use Illuminate\Support\Facades\Facade;
 

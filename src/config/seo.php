@@ -1,5 +1,6 @@
 <?php
-return array(
+
+return [
 
     'title' => [
         'default' => '',
@@ -13,4 +14,4 @@ return array(
         'limit' => 156,
     ],
 
-);
+];

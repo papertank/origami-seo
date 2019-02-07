@@ -1,4 +1,6 @@
-<?php namespace Origami\Seo;
+<?php
+
+namespace Origami\Seo;
 
 use Illuminate\Support\ServiceProvider;
 
@@ -30,6 +32,11 @@ class SeoServiceProvider extends ServiceProvider {
 	 */
 	public function register()
 	{
+		$this->mergeConfigFrom(
+            __DIR__ . '/config/seo.php',
+            'seo'
+        );
+
 		$this->app->bind('origami.seo', function($app)
         {
             $config = $app['config']->get('seo', []);
