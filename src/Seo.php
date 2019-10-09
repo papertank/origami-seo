@@ -2,30 +2,31 @@
 
 namespace Origami\Seo;
 
+use Illuminate\Support\Arr;
 use Illuminate\Support\Str;
 
-class Seo {
-
+class Seo
+{
     /**
      * @var array
      */
     private $config;
 
-    public function __construct($config = array())
+    public function __construct($config = [])
     {
         $this->config = $config;
     }
 
     public function title($prefix = null)
     {
-        if ( ! $prefix ) {
+        if (!$prefix) {
             return $this->config('title.default');
         }
 
         $suffix = $this->config('title.suffix');
         $separator = $this->config('title.separator');
 
-        if ( is_array($prefix) ) {
+        if (is_array($prefix)) {
             $prefix = implode($this->config('title.glue', $separator), $prefix);
         }
 
@@ -36,18 +37,17 @@ class Seo {
 
     public function description($text = null)
     {
-        if ( ! $text ) {
+        if (!$text) {
             $text = $this->config('description.default');
         }
 
         $limit = $this->config('description.limit', false);
 
-        return ( $limit ? str_limit($text, $limit) : $text );
+        return ($limit ? Str::limit($text, $limit) : $text);
     }
 
     public function config($key, $fallback = null)
     {
-        return array_get($this->config, $key, $fallback);
+        return Arr::get($this->config, $key, $fallback);
     }
-
 }
