@@ -1,6 +1,7 @@
 {
     "name": "origami/seo",
     "description": "Simple SEO Helper",
+    "license": "MIT",
     "authors": [
         {
             "name": "Papertank",
