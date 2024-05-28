@@ -37,7 +37,7 @@ class SeoServiceProvider extends ServiceProvider
             'seo'
         );
 
-        $this->app->bind(Seo::class, function ($app) {
+        $this->app->singleton(Seo::class, function ($app) {
             $config = $app['config']->get('seo', []);
             return new Seo($config);
         });
